@@ -1,0 +1,10 @@
+create database if not exists quan_ly_hs;
+use quan_ly_hs;
+create table student(id int primary key auto_increment, name char(45), age int, country char (45));
+insert into student (id,name, age, country) values (1,"truong", 19,"VN");
+insert into student (name, age, country) values ("uy", 19,"VN");
+create table teacher(id int primary key auto_increment, name char(45), age int, country char (45));
+insert into teacher (id,name, age, country) values (1,"truong", 19,"VN");
+insert into teacher (name, age, country) values ("uy", 19,"VN");
+select* from student;
+select* from teacher;
