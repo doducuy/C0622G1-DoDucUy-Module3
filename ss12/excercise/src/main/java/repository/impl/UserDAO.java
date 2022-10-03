@@ -13,7 +13,7 @@ import static java.util.Collections.*;
 public class UserDAO implements IUserDAO {
     private String jdbcURL = "jdbc:mysql://localhost:3306/demo";
     private String jdbcUsername = "root";
-    private String jdbcPassword = "truongkhangasdf";
+    private String jdbcPassword = "cyncyn12";
 
     private static final String INSERT_USERS_SQL = "INSERT INTO users (name, email, country) VALUES (?, ?, ?);";
     private static final String SELECT_USER_BY_ID = "select id,name,email,country from users where id =?";
