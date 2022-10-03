@@ -1,4 +1,5 @@
 public class Customer {
+    private int id;
     private String name;
     private String dateOfBirth;
     private String address;
@@ -6,10 +7,19 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(String name, String dateOfBirth, String address) {
+    public Customer(int id, String name, String dateOfBirth, String address) {
+        this.id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.address = address;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

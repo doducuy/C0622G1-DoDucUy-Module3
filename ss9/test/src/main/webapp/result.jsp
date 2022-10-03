@@ -1,3 +1,4 @@
+<%--<jsp:useBean id="result" scope="request" type="TranslationServlet"/>--%>
 <%--
   Created by IntelliJ IDEA.
   User: LAPTOP ACER
@@ -6,11 +7,14 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
 <html>
 <head>
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h3>
+    Result : ${kq}
+</h3>
 </body>
 </html>

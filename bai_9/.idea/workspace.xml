@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2eb721aa-cfc1-4137-a5a4-ce2ea25921b8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../ss10/exercise/display_list_customer/src/main/java/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss10/exercise/display_list_customer/src/main/java/CustomerServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss10/practice/currency-converter-jsp/src/main/java/ConvertServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss10/practice/currency-converter-jsp/src/main/webapp/converter.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss9/practice/test/src/main/java/SumServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-time/src/main/java/ServerTimeServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple_login/src/main/java/SimpleLoginServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/ss8_bootstrap/test.css" beforeDir="false" afterPath="$PROJECT_DIR$/../css/ss8_bootstrap/test.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/ss8_bootstrap/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../css/ss8_bootstrap/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../md3_css/css_exercise/nhung_css_vao_html.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../md3_css/css_exercise/nhung_css_vao_html.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../md3_css/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/.idea/md3_css.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/bai_7_bo_cuc/bai_tap/tao_bo_cuc_voi_css/tao_bo_cuc.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/bai_7_bo_cuc/bai_tap/tao_bo_cuc_voi_css/tao_bo_cuc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/bai_7_bo_cuc/bai_tap/tao_bo_cuc_voi_rwd/rwd.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/bai_7_bo_cuc/bai_tap/tao_bo_cuc_voi_rwd/rwd.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/bai_7_bo_cuc/bai_tap/tao_fb_don_gian/fb.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/bai_7_bo_cuc/bai_tap/tao_fb_don_gian/fb.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/bai_7_bo_cuc/bai_tap/tao_web_doc_truyen/doc_truyen.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/bai_7_bo_cuc/bai_tap/tao_web_doc_truyen/doc_truyen.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/bai_7_bo_cuc/thuc_hanh/box_model.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/bai_7_bo_cuc/thuc_hanh/menu_doc.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/bai_7_bo_cuc/thuc_hanh/menu_doc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/bai_7_bo_cuc/thuc_hanh/menu_ngang.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/bai_7_bo_cuc/thuc_hanh/menu_ngang.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/bai_7_bo_cuc/thuc_hanh/su_dung_box_model.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/css_exercise/dinh_dang_van_ban_voi_css/dinh_dang_van_ban_voi_css.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/css_exercise/dinh_dang_van_ban_voi_css/dinh_dang_van_ban_voi_css.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/css_exercise/nhung_css_vao_html/nhung_css_vao_html.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/css_exercise/nhung_css_vao_html/nhung_css_vao_html.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/css_exercise/tao_trang_doc_truyen_ngan/tao_trang_doc_truyen_ngan.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/css_exercise/tao_trang_doc_truyen_ngan/tao_trang_doc_truyen_ngan.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/nhap/nhap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/nhap/nhap.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/nhap/nhapbox.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_css/nhap/nhapbox.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7_layout/bai_tap/tao_bo_cuc_voi_css/tao_bo_cuc.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7_layout/bai_tap/tao_bo_cuc_voi_css/tao_bo_cuc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7_layout/bai_tap/tao_bo_cuc_voi_rwd/rwd.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7_layout/bai_tap/tao_bo_cuc_voi_rwd/rwd.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7_layout/bai_tap/tao_fb_don_gian/fb.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7_layout/bai_tap/tao_fb_don_gian/fb.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7_layout/bai_tap/tao_web_doc_truyen/doc_truyen.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7_layout/bai_tap/tao_web_doc_truyen/doc_truyen.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7_layout/thuc_hanh/box_model.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7_layout/thuc_hanh/menu_doc.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7_layout/thuc_hanh/menu_doc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7_layout/thuc_hanh/menu_ngang.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7_layout/thuc_hanh/menu_ngang.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7_layout/thuc_hanh/su_dung_box_model.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss9/practice/product_discount_calculator/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../ss9/practice/product_discount_calculator/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss9/practice/product_discount_calculator/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../ss9/practice/product_discount_calculator/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss9/practice/product_discount_calculator/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../ss9/practice/product_discount_calculator/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss9/practice/product_discount_calculator/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../ss9/practice/product_discount_calculator/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss9/practice/product_discount_calculator/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../ss9/practice/product_discount_calculator/.gradle/6.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss9/practice/product_discount_calculator/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../ss9/practice/product_discount_calculator/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss9/practice/product_discount_calculator/build/libs/product_discount_calculator-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../ss9/practice/product_discount_calculator/build/libs/product_discount_calculator-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss_1_database/case_study/case_study.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../ss_1_database/case_study/case_study.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled/src/servlet/Servlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled/src/servlet/Servlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled/web/truongkhang.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled/web/truongkhang.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled/web/uy.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled/web/uy.jsp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2FR3BsbbccKdhkTo8YGnccNqrqy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ss9/practice" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2eb721aa-cfc1-4137-a5a4-ce2ea25921b8" name="Default Changelist" comment="" />
+      <created>1664440936992</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1664440936992</updated>
+      <workItem from="1664440938118" duration="18000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1664440955531">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1664440955531" />
+  </component>
+</project>

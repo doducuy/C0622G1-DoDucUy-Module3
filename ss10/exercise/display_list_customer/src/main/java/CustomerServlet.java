@@ -11,11 +11,11 @@ import java.util.List;
 public class CustomerServlet extends HttpServlet {
     private static List<Customer> customerList = new ArrayList<>();
     static{
-        customerList.add(new Customer("Mai Văn Hoàn","1983-08-20","Hà Nội"));
-        customerList.add(new Customer("Nguyễn Văn Nam","1983-08-21","Bắc Giang"));
-        customerList.add(new Customer("Nguyễn Thái Hòa","1983-08-22","Nam Định"));
-        customerList.add(new Customer("Trần Đăng Khoa","1983-08-17","Hà Tây"));
-        customerList.add(new Customer("Nguyễn Đình Thi","1983-08-19","Hà Nội"));
+        customerList.add(new Customer(1,"Mai Văn Hoàn","1983-08-20","Hà Nội"));
+        customerList.add(new Customer(2,"Nguyễn Văn Nam","1983-08-21","Bắc Giang"));
+        customerList.add(new Customer(3,"Nguyễn Thái Hòa","1983-08-22","Nam Định"));
+        customerList.add(new Customer(4,"Trần Đăng Khoa","1983-08-17","Hà Tây"));
+        customerList.add(new Customer(5,"Nguyễn Đình Thi","1983-08-19","Hà Nội"));
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -23,6 +23,8 @@ public class CustomerServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("customerList", customerList);
-        request.getRequestDispatcher("/index.jsp").forward(request,response);
+        request.getRequestDispatcher("/listCustomer.jsp").forward(request,response);
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
     }
 }
