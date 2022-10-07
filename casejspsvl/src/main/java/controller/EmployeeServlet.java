@@ -24,12 +24,32 @@ public class EmployeeServlet extends HttpServlet {
                 saveEmployee(request,response);
                 break;
             case "edit":
+                saveEditEmployee(request,response);
                 break;
         }
     }
 
+    private void saveEditEmployee(HttpServletRequest request, HttpServletResponse response) {
+        String name = request.getParameter("name");
+        String birthday = request.getParameter("birthday");
+        String idCard = request.getParameter("idCard");
+        double salary = Double.parseDouble(request.getParameter("salary"));
+        String phoneNumber = request.getParameter("phoneNumber");
+        String email = request.getParameter("email");
+        String address = request.getParameter("address");
+        int positionId = Integer.parseInt(request.getParameter("positionId"));
+        int educationDegreeId = Integer.parseInt(request.getParameter("educationDegreeId"));
+        int divisionId = Integer.parseInt(request.getParameter("divisionId"));
+        String userName = request.getParameter("userName");
+        Employee employee =new Employee(name,birthday,idCard,salary,phoneNumber,email,address,positionId,educationDegreeId,divisionId,userName);
+//        employeeService.addEmployee(employee);
+        employeeService.editEmloyee(employee);
+        showEmployeeList(request,response);
 
-        protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    }
+
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             request.setCharacterEncoding("UTF-8");
             response.setContentType("text/html;charset=UTF-8");
         String action = request.getParameter("action");
@@ -41,12 +61,37 @@ public class EmployeeServlet extends HttpServlet {
                 addEmployeeForm(request,response);
                 break;
             case "delete":
+                deleteEmployee(request,response);
                 break;
+            case "edit":
+                editEmployeeForm(request,response);
             default:
                 showEmployeeList(request, response);
                 break;
         }
     }
+
+    private void editEmployeeForm(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+
+        try {
+            request.setAttribute("id",id);
+            request.getRequestDispatcher("/view/editEmployeeForm.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private void deleteEmployee(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        employeeService.deleteEmployee(id);
+        showEmployeeList(request,response);
+    }
+
+
     private void saveEmployee(HttpServletRequest request, HttpServletResponse response) {
         String name = request.getParameter("name");
         String birthday = request.getParameter("birthday");

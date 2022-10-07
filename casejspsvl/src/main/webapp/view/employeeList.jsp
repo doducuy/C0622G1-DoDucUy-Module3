@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--%khai báo dòng này để forrmat số :--%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%--
   Created by IntelliJ IDEA.
@@ -16,6 +17,7 @@
 </head>
 <body>
 <h3 style="color: #ffc107; text-align: center">EMPLOYEE LIST OF FURAMA RESORT</h3>
+<a href="/employee?action=add">Add New Employee</a>
 <table class="table table-striped" border="1">
     <tr>
         <th>ID</th>
@@ -30,8 +32,8 @@
 <%--        <th>Education Degree Id</th>--%>
 <%--        <th>Division Id</th>--%>
         <th>Username</th>
+        <th>Delete</th>
         <th>Edit</th>
-        <th><a href="/employee?action=add">Add New Employee</a></th>
     </tr>
     <c:forEach var="employList" items="${employeeList}">
         <tr>
@@ -47,8 +49,36 @@
 <%--            <td><c:out value="${employList.getEducationDegreeId()}"></c:out></td>--%>
 <%--            <td><c:out value="${employList.getDivisionId()}"></c:out></td>--%>
             <td>${employList.getUsername()}</td>
+<%--            <td style="width: 10px"><a href="/employee?action=delete"><img src="../img/xoa.jpg" style="width: 50%"></a></td>--%>
+            <td style="width: 20px">
+                <!-- Button trigger modal -->
+                <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal${employList.getId()}">
+                    <img src="../img/xoa.jpg" style="width: 50%">
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal${employList.getId()}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Delete Employee</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Are You Sure?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button"  data-bs-dismiss="modal">  No</button>
+                                <button type="button"><a href="/employee?action=delete&id=${employList.getId()}">Delete!</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td ><a href="/employee?action=edit&id=${employList.getId()}"><img src="../img/edit.jpg" style="width: 30px"></a></td>
         </tr>
+
     </c:forEach>
+
 </table>
 <div>
     <a href="/view/home.jsp">Back Home!!!</a>

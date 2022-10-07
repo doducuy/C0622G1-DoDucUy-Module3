@@ -41,7 +41,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="/employee">Display Employee List</a></li>
-                                <li><a class="dropdown-item" href="/employee">Add New Employee(Modal)</a></li>
+                                <li><a class="dropdown-item" href="/employee?action=add">Add New Employee(Modal)</a></li>
                                 <li><a class="dropdown-item" href="/employee">Edit Employee(Modal)</a></li>
                             </ul>
                         </li>

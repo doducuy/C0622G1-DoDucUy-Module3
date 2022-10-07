@@ -5,7 +5,6 @@ import repository.IEmployeeRepository;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class EmployeeRepository implements IEmployeeRepository {
@@ -14,11 +13,11 @@ public class EmployeeRepository implements IEmployeeRepository {
     private String jdbcPassword = "cyncyn12";
 
     private static final String INSERT_EMPLOYEE_SQL = "INSERT INTO employee (name,date_of_birth,id_card,salary,phone_number,email,address,position_id,education_degree_id,division_id,username) VALUES (?,?,?,?,?,?,?,?,?,?,?);";
-//    private static final String SELECT_USER_BY_ID = "select id,name,email,country from users where id =?";
+    private static final String SELECT_EMPLOYEE_BY_ID = "select * from employee where id =?";
 //    private static final String SELECT_USER_BY_COUNTRY = "select * from users where country like ?";
     private static final String SELECT_ALL_EMPLOYEE = "select * from employee;";
-//    private static final String DELETE_USERS_SQL = "delete from users where id = ?;";
-//    private static final String UPDATE_USERS_SQL = "update users set name = ?,email= ?, country =? where id = ?;";
+    private static final String DELETE_EMPLOYEE_SQL = "delete from employee where id = ?;";
+    private static final String UPDATE_EMPLOYEE_SQL = "update employee set name = ?,date_of_birth= ?, id_card =?, salary=?, phone_number=?, email=? , address=?, position_id=?, education_degree_id=?,division_id=?, username=? where id = ?;";
 //    private static final String SORT_NAME = "select * from users order by name;";
 
     public EmployeeRepository() {
@@ -87,4 +86,52 @@ public class EmployeeRepository implements IEmployeeRepository {
             throwables.printStackTrace();
         }
     }
+
+    @Override
+    public void deleteEmployee(int id) {
+        Connection connection = getConnection();
+        try {
+            PreparedStatement ps = connection.prepareStatement(DELETE_EMPLOYEE_SQL);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    @Override
+    public void editEmloyee(Employee employee) {
+        Connection connection = getConnection();
+        try {
+            PreparedStatement ps = connection.prepareStatement(UPDATE_EMPLOYEE_SQL);
+            ps.setString(1,employee.getName());
+            ps.setString(2,  employee.getDateOfBirth());
+            ps.setString(3,employee.getIdCard());
+            ps.setDouble(4,employee.getSalary());
+            ps.setString(5,employee.getPhoneNumber());
+            ps.setString(6, employee.getEmail());
+            ps.setString(7,employee.getAddress());
+            ps.setInt(8,employee.getPositionId());
+            ps.setInt(9, employee.getEducationDegreeId());
+            ps.setInt(10, employee.getDivisionId());
+            ps.setString(11,employee.getUsername());
+            ps.setInt(12,employee.getId());
+            ps.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    @Override
+    public Employee findById(int id) {
+        Connection connection =getConnection();
+        try {
+            PreparedStatement ps = connection.prepareStatement(UPDATE_EMPLOYEE_SQL);
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return null;
+    }
+
 }
