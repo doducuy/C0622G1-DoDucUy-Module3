@@ -50,9 +50,9 @@
                                 Customer
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Display Customer</a></li>
-                                <li><a class="dropdown-item" href="#">Add New Customer</a></li>
-                                <li><a class="dropdown-item" href="#">Edit Customer</a></li>
+                                <li><a class="dropdown-item" href="/customer">Display Customer</a></li>
+                                <li><a class="dropdown-item" href="/customer?action=add">Add New Customer</a></li>
+                                <li><a class="dropdown-item" href="/customer?action">Edit Customer</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
