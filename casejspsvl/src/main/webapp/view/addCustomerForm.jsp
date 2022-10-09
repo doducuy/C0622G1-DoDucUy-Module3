@@ -12,13 +12,11 @@
 </head>
 <body>
 <h3 style="text-align: center">Add Customer Form</h3>
-<a href="/customer">Back Customer List!!!</a>
-
 <c:if test="${mess!=null}">
-    <span>${mess}</span>
+    <span style="color: red">${mess}</span>
 </c:if>
-
-<form action="/customer?action=add" method="post">
+<a href="/customer">Back Customer List!!!</a>
+<form action="/customer?action=add&mess=1" method="post">
     <pre>Customer Type Id: <input type="number" name="customerTypeId"></pre>
     <pre>Name:     <input type="text" name="name"> </pre>
     <pre>Birthday: <input type="date" name="birthday"> </pre>

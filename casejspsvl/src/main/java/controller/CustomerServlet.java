@@ -25,6 +25,8 @@ public class CustomerServlet extends HttpServlet {
             case "add":
                 saveCustomer(request,response);
                 break;
+            case "edit":
+                break;
         }
     }
 
@@ -39,7 +41,15 @@ public class CustomerServlet extends HttpServlet {
         String address = request.getParameter("address");
         Customer customer =new Customer(customerTypeId,name,birthday,gender,idCard,phoneNumber,email,address);
         customerService.addNewCustomer(customer);
-        showCustomerList(request,response);
+        request.setAttribute("mess","Thêm Mới Thành Công!!!");
+        try {
+            request.getRequestDispatcher("/view/addCustomerForm.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+//        showCustomerList(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

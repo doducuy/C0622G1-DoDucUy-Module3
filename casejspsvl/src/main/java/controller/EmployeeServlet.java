@@ -30,6 +30,7 @@ public class EmployeeServlet extends HttpServlet {
     }
 
     private void saveEditEmployee(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
         String birthday = request.getParameter("birthday");
         String idCard = request.getParameter("idCard");
@@ -41,7 +42,7 @@ public class EmployeeServlet extends HttpServlet {
         int educationDegreeId = Integer.parseInt(request.getParameter("educationDegreeId"));
         int divisionId = Integer.parseInt(request.getParameter("divisionId"));
         String userName = request.getParameter("userName");
-        Employee employee =new Employee(name,birthday,idCard,salary,phoneNumber,email,address,positionId,educationDegreeId,divisionId,userName);
+        Employee employee =new Employee(id,name,birthday,idCard,salary,phoneNumber,email,address,positionId,educationDegreeId,divisionId,userName);
         employeeService.editEmloyee(employee);
         showEmployeeList(request,response);
 
@@ -71,12 +72,11 @@ public class EmployeeServlet extends HttpServlet {
     }
 
     private void editEmployeeForm(HttpServletRequest request, HttpServletResponse response) {
-        List<Employee> employeeList= employeeService.showEmployeeList();
         int id = Integer.parseInt(request.getParameter("id"));
-
+        Employee employee= employeeService.findById(id);
         try {
             request.setAttribute("id",id);
-            request.setAttribute("employeeList", employeeList);
+            request.setAttribute("employee", employee);
             request.getRequestDispatcher("/view/editEmployeeForm.jsp").forward(request,response);
         } catch (ServletException e) {
             e.printStackTrace();

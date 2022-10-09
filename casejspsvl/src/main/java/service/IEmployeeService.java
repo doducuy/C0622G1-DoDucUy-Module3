@@ -9,5 +9,5 @@ public interface IEmployeeService {
     void addEmployee(Employee employee);
     void deleteEmployee(int id);
     void editEmloyee(Employee employee);
-//    List<Employee> findAll();
+    Employee findById(int id);
 }

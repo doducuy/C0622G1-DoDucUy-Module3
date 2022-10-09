@@ -28,6 +28,17 @@ public class EmployeeService implements IEmployeeService {
         employeeRepository.editEmloyee(employee);
     }
 
+    @Override
+    public Employee findById(int id) {
+        for (Employee employee: employeeRepository.showEmployeeList()
+             ) {
+            if(employee.getId()==id){
+                return  employee;
+            }
+        }
+        return null;
+    }
+
 //    @Override
 //    public List<Employee> findAll() {
 //        return employeeRepository.findAll();
