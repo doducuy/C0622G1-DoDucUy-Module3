@@ -16,7 +16,7 @@ public class CustomerRepository implements ICustomerRepository {
 //    private static final String SELECT_EMPLOYEE_BY_ID = "select * from employee where id =?";
     //    private static final String SELECT_USER_BY_COUNTRY = "select * from users where country like ?";
     private static final String SELECT_ALL_CUSTOMER = "select * from customer;";
-//    private static final String DELETE_EMPLOYEE_SQL = "delete from employee where id = ?;";
+    private static final String DELETE_CUSTOMER_SQL = "delete from customer where id = ?;";
 //    private static final String UPDATE_EMPLOYEE_SQL = "update employee set name = ?,date_of_birth= ?, id_card =?, salary=?, phone_number=?, email=? , address=?, position_id=?, education_degree_id=?,division_id=?, username=? where id = ?;";
 //    private static final String SORT_NAME = "select * from users order by name;";
 
@@ -65,21 +65,31 @@ public class CustomerRepository implements ICustomerRepository {
 
     @Override
     public void addNewCustomer(Customer customer) {
-        Connection connection =getConnection();
+        Connection connection = getConnection();
         try {
             PreparedStatement ps = connection.prepareStatement(INSERT_CUSTOMER_SQL);
             ps.setInt(1,customer.getCustomerTypeId());
-            ps.setString(2,customer.getName());
+            ps.setString(2, customer.getName());
             ps.setString(3,customer.getDateOfBirth());
             ps.setInt(4,customer.getGender());
             ps.setString(5,customer.getIdCard());
-            ps.setString(6,customer.getPhoneNumber());
+            ps.setString(6, customer.getPhoneNumber());
             ps.setString(7,customer.getEmail());
-            ps.setString(8,customer.getAddress());
+            ps.setString(8, customer.getAddress());
             ps.executeUpdate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
     }
 
+    public void deleteCustomer(int id) {
+        Connection connection = getConnection();
+        try {
+            PreparedStatement ps = connection.prepareStatement(DELETE_CUSTOMER_SQL);
+            ps.setInt(1,id);
+            ps.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 }

@@ -53,12 +53,20 @@ public class CustomerServlet extends HttpServlet {
             case "add":
                 showAddCustomerForm(request,response);
                 break;
+            case "delete":
+                deleteCustomer(request,response);
             case "edit":
                 break;
             default:
                 showCustomerList(request,response);
         }
 
+    }
+
+    private void deleteCustomer(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        customerService.deleteCustomer(id);
+        showCustomerList(request,response);
     }
 
     private void showAddCustomerForm(HttpServletRequest request, HttpServletResponse response) {

@@ -18,4 +18,8 @@ public class CustomerService implements ICustomerService {
     public void addNewCustomer(Customer customer) {
         customerRepository.addNewCustomer(customer);
     }
+
+    public void deleteCustomer(int id) {
+        customerRepository.deleteCustomer(id);
+    }
 }
