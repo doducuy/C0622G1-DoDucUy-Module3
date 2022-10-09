@@ -12,12 +12,10 @@
 </head>
 <body>
 <h3 style="text-align: center">Add Employee Form</h3>
-<a href="/employee">Back Employee List!!!</a>
-
 <c:if test="${mess!=null}">
-    <span>${mess}</span>
+    <span style="color: red">${mess}</span>
 </c:if>
-
+<a href="/employee">Back Employee List!!!</a>
 <form action="/employee?action=add" method="post">
     <pre>Name:     <input type="text" name="name"> </pre>
     <pre>Birthday: <input type="date" name="birthday"> </pre>
@@ -31,11 +29,11 @@
     <pre>Division ID:  <input type="number" name="divisionId"> </pre>
     <pre>User Name ID:  <input type="text" name="userName"> </pre>
 
-<%--    <pre>ClassId:  <select name="classId">--%>
-<%--                    <option value="1">C12</option>--%>
-<%--                    <option value="2">C11</option>--%>
-<%--                    <option value="3">C10</option>--%>
-<%--                    </select></pre>--%>
+    <%--    <pre>ClassId:  <select name="classId">--%>
+    <%--                    <option value="1">C12</option>--%>
+    <%--                    <option value="2">C11</option>--%>
+    <%--                    <option value="3">C10</option>--%>
+    <%--                    </select></pre>--%>
     <pre>           <button type="submit">Save</button></pre>
 </form>
 </body>

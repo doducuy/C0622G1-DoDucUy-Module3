@@ -8,14 +8,14 @@ import service.ICustomerService;
 import java.util.List;
 
 public class CustomerService implements ICustomerService {
-    CustomerRepository CustomerRepository = new CustomerRepository();
+    CustomerRepository customerRepository = new CustomerRepository();
     @Override
     public List<Customer> showCustomerList() {
-        return CustomerRepository.showCustomerList();
+        return customerRepository.showCustomerList();
     }
 
     @Override
     public void addNewCustomer(Customer customer) {
-        CustomerRepository.addNewCustomer(customer);
+        customerRepository.addNewCustomer(customer);
     }
 }

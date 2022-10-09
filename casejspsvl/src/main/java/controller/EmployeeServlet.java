@@ -42,7 +42,6 @@ public class EmployeeServlet extends HttpServlet {
         int divisionId = Integer.parseInt(request.getParameter("divisionId"));
         String userName = request.getParameter("userName");
         Employee employee =new Employee(name,birthday,idCard,salary,phoneNumber,email,address,positionId,educationDegreeId,divisionId,userName);
-//        employeeService.addEmployee(employee);
         employeeService.editEmloyee(employee);
         showEmployeeList(request,response);
 
@@ -72,10 +71,12 @@ public class EmployeeServlet extends HttpServlet {
     }
 
     private void editEmployeeForm(HttpServletRequest request, HttpServletResponse response) {
+        List<Employee> employeeList= employeeService.showEmployeeList();
         int id = Integer.parseInt(request.getParameter("id"));
 
         try {
             request.setAttribute("id",id);
+            request.setAttribute("employeeList", employeeList);
             request.getRequestDispatcher("/view/editEmployeeForm.jsp").forward(request,response);
         } catch (ServletException e) {
             e.printStackTrace();
@@ -106,8 +107,15 @@ public class EmployeeServlet extends HttpServlet {
         String userName = request.getParameter("userName");
         Employee employee =new Employee(name,birthday,idCard,salary,phoneNumber,email,address,positionId,educationDegreeId,divisionId,userName);
         employeeService.addEmployee(employee);
-        showEmployeeList(request,response);
-//        request.setAttribute("mess", "Them moi Thanh Cong");
+//        showEmployeeList(request,response);
+        request.setAttribute("mess", "Thêm mới thành công!!!   ");
+        try {
+            request.getRequestDispatcher("/view/addEmployeeForm.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 

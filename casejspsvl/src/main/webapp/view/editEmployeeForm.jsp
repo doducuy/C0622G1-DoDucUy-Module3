@@ -13,7 +13,7 @@
 <body>
 <h3 style="text-align: center">Edit Employee Form</h3>
 <a href="/employee">Back Employee List!!!</a>
-<form action="/employee?action=add" method="post">
+<form action="/employee?action=edit" method="post">
     <pre>Name:     <input type="text" name="name"> </pre>
     <pre>Birthday: <input type="date" name="birthday"> </pre>
     <pre>Id Card:    <input type="text" name="idCard"> </pre>

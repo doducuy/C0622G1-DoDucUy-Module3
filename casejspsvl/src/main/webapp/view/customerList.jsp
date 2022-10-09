@@ -39,12 +39,12 @@
             <td>${customerList.getId()}</td>
             <td>${customerList.getName()}</td>
             <td>${customerList.getDateOfBirth()}</td>
-            <td>${customerList.getGender()}</td>
+            <c:if test="${customerList.getGender()==0}"><td><c:out value="nữ"></c:out></td>  </c:if>
+            <c:if test="${customerList.getGender()==1}"><td><c:out value="nam"></c:out></td>  </c:if>
             <td>${customerList.getIdCard()}</td>
             <td>${customerList.getPhoneNumber()}</td>
             <td>${customerList.getEmail()}</td>
             <td>${customerList.getAddress()}</td>
-                <%--            <td style="width: 10px"><a href="/employee?action=delete"><img src="../img/xoa.jpg" style="width: 50%"></a></td>--%>
             <td style="width: 20px">
                 <!-- Button trigger modal -->
                 <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal${customerList.getId()}">
