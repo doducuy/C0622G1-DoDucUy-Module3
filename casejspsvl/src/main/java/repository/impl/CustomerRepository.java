@@ -19,6 +19,7 @@ public class CustomerRepository implements ICustomerRepository {
     private static final String DELETE_CUSTOMER_SQL = "delete from customer where id = ?;";
 //    private static final String UPDATE_EMPLOYEE_SQL = "update employee set name = ?,date_of_birth= ?, id_card =?, salary=?, phone_number=?, email=? , address=?, position_id=?, education_degree_id=?,division_id=?, username=? where id = ?;";
 //    private static final String SORT_NAME = "select * from users order by name;";
+private static final String UPDATE_CUSTOMER_SQL = "update customer set customer_type_id=?,name=?,date_of_birth=?,gender=?,id_card=?,phone_number=?,email=?,address=? where id=?;";
 
 
     public CustomerRepository() {
@@ -87,6 +88,26 @@ public class CustomerRepository implements ICustomerRepository {
         try {
             PreparedStatement ps = connection.prepareStatement(DELETE_CUSTOMER_SQL);
             ps.setInt(1,id);
+            ps.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    @Override
+    public void editCustomer(Customer customer) {
+        Connection connection = getConnection();
+        try {
+            PreparedStatement ps = connection.prepareStatement(UPDATE_CUSTOMER_SQL);
+            ps.setInt(1,customer.getCustomerTypeId());
+            ps.setString(2,customer.getName());
+            ps.setString(3,customer.getDateOfBirth());
+            ps.setInt(4,customer.getGender());
+            ps.setString(5, customer.getIdCard());
+            ps.setString(6,customer.getPhoneNumber());
+            ps.setString(7, customer.getEmail());
+            ps.setString(8,customer.getAddress());
+            ps.setInt(9,customer.getId());
             ps.executeUpdate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();

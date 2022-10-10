@@ -1,6 +1,7 @@
 package service.impl;
 
 import model.Customer;
+import model.Employee;
 import repository.ICustomerRepository;
 import repository.impl.CustomerRepository;
 import service.ICustomerService;
@@ -21,5 +22,21 @@ public class CustomerService implements ICustomerService {
 
     public void deleteCustomer(int id) {
         customerRepository.deleteCustomer(id);
+    }
+
+    @Override
+    public Customer findById(int id) {
+        for (Customer customer:customerRepository.showCustomerList()
+             ) {
+            if(customer.getId()==id){
+                return customer;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public void editCustomer(Customer customer) {
+        customerRepository.editCustomer(customer);
     }
 }

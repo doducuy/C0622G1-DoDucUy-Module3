@@ -39,6 +39,11 @@ public class EmployeeService implements IEmployeeService {
         return null;
     }
 
+    @Override
+    public List<Employee> searchEmployee(String searchName) {
+        return employeeRepository.searchEmployee("%"+searchName+"%");
+    }
+
 //    @Override
 //    public List<Employee> findAll() {
 //        return employeeRepository.findAll();

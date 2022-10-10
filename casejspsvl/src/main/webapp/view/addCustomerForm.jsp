@@ -16,8 +16,10 @@
     <span style="color: red">${mess}</span>
 </c:if>
 <a href="/customer">Back Customer List!!!</a>
-<form action="/customer?action=add&mess=1" method="post">
-    <pre>Customer Type Id: <input type="number" name="customerTypeId"></pre>
+<form action="/customer" method="post">
+    <input type="text" value="add" name="action" hidden>
+    <input type="text" value="1" name="mess" hidden>
+    <pre>Customer Type Id: <input type="number" name="customerTypeId" required></pre>
     <pre>Name:     <input type="text" name="name"> </pre>
     <pre>Birthday: <input type="date" name="birthday"> </pre>
     <pre>Gender: <input type="text" name="gender"> </pre>

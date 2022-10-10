@@ -18,7 +18,7 @@ public class EmployeeRepository implements IEmployeeRepository {
     private static final String SELECT_ALL_EMPLOYEE = "select * from employee;";
     private static final String DELETE_EMPLOYEE_SQL = "delete from employee where id = ?;";
     private static final String UPDATE_EMPLOYEE_SQL = "update employee set name = ?,date_of_birth= ?, id_card =?, salary=?, phone_number=?, email=? , address=?, position_id=?, education_degree_id=?,division_id=?, username=? where id = ?;";
-//    private static final String SORT_NAME = "select * from users order by name;";
+    private static final String SEARCH_NAME = "select * from employee where name like ?;";
 
     public EmployeeRepository() {
     }
@@ -132,6 +132,35 @@ public class EmployeeRepository implements IEmployeeRepository {
             throwables.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    public List<Employee> searchEmployee(String searchName) {
+        List<Employee> employeeListSearch = new ArrayList<>();
+        Connection connection = getConnection();
+        try {
+            PreparedStatement ps = connection.prepareStatement(SEARCH_NAME);
+            ps.setString(1,searchName);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                String dateOfBirth = String.valueOf(rs.getDate("date_of_birth"));
+                String idCard = rs.getString("id_card");
+                double salary = rs.getDouble("salary");
+                String phoneNumber = rs.getString("phone_number");
+                String email = rs.getString("email");
+                String address = rs.getString("address");
+                int positionId = rs.getInt("position_id");
+                int educationDegreeId = rs.getInt("education_degree_id");
+                int divisionId = rs.getInt("division_id");
+                String username = rs.getString("username");
+                employeeListSearch.add(new Employee(id,name,dateOfBirth,idCard,salary,phoneNumber,email,address,positionId,educationDegreeId,divisionId,username));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return employeeListSearch;
     }
 
 }

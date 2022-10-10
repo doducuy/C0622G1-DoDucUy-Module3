@@ -63,13 +63,13 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button"  data-bs-dismiss="modal">  No</button>
-                                <button type="button"><a href="/employee?action=delete&id=${customerList.getId()}">Delete!</a></button>
+                                <button type="button"><a href="/customer?action=delete&id=${customerList.getId()}">Delete!</a></button>
                             </div>
                         </div>
                     </div>
                 </div>
             </td>
-            <td ><a href="/employee?action=edit&id=${customerList.getId()}"><img src="../img/edit.jpg" style="width: 30px"></a></td>
+            <td ><a href="/customer?action=edit&id=${customerList.getId()}"><img src="../img/edit.jpg" style="width: 30px"></a></td>
         </tr>
 
     </c:forEach>

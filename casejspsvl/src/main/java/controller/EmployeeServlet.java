@@ -1,7 +1,9 @@
 package controller;
 
 import model.Employee;
+import model.Position;
 import service.impl.EmployeeService;
+import service.impl.PositionService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,6 +17,7 @@ import java.util.List;
 @WebServlet(name = "EmployeeServlet", urlPatterns = "/employee")
 public class EmployeeServlet extends HttpServlet {
     private  EmployeeService employeeService =new EmployeeService();
+    private PositionService positionService =new PositionService();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
@@ -65,9 +68,24 @@ public class EmployeeServlet extends HttpServlet {
                 break;
             case "edit":
                 editEmployeeForm(request,response);
+                break;
+            case "search":
+                searchEmployee(request,response);
             default:
                 showEmployeeList(request, response);
                 break;
+        }
+    }
+
+    private void searchEmployee(HttpServletRequest request, HttpServletResponse response) {
+        String searchName = request.getParameter("searchName");
+        request.setAttribute("employeeList",employeeService.searchEmployee(searchName));
+        try {
+            request.getRequestDispatcher("/view/employeeList.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -131,7 +149,9 @@ public class EmployeeServlet extends HttpServlet {
 
     private void showEmployeeList(HttpServletRequest request, HttpServletResponse response) {
         List<Employee> employeeList= employeeService.showEmployeeList();
+        List<Position> positionList =  positionService.showPositionList();
         request.setAttribute("employeeList", employeeList);
+        request.setAttribute("positionList",positionList);
         try {
             request.getRequestDispatcher("view/employeeList.jsp").forward(request,response);
         } catch (ServletException e) {

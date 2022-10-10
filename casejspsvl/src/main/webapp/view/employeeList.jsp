@@ -18,6 +18,17 @@
 <body>
 <h3 style="color: #ffc107; text-align: center">EMPLOYEE LIST OF FURAMA RESORT</h3>
 <a href="/employee?action=add">Add New Employee</a>
+
+<form class="row g-3 d-fex justify-content-end" action="/employee" method="get">
+    <input type="text" name="action" value="search" hidden>
+    <div class="col-auto">
+        <input type="text" name="searchName" class="form-control" placeholder="Name">
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-outline-primary mb-3">Search</button>
+    </div>
+</form>
+
 <table class="table table-striped" border="1">
     <tr>
         <th>ID</th>
@@ -26,6 +37,7 @@
         <th>Id Card</th>
         <th>Salary</th>
         <th>Phone Number</th>
+        <th>Position</th>
         <th>Email</th>
         <th>Address</th>
 <%--        <th>Position Id</th>--%>
@@ -43,6 +55,11 @@
             <td>${employList.getIdCard()}</td>
             <td><fmt:formatNumber value="${employList.getSalary()}"/></td>
             <td>${employList.getPhoneNumber()}</td>
+            <c:forEach var="positionList" items="${positionList}">
+                <c:if test="${positionList.getId()==employList.getPositionId()}">
+                    <td>${positionList.getName()}</td>
+                </c:if>
+            </c:forEach>
             <td>${employList.getEmail()}</td>
             <td>${employList.getAddress()}</td>
 <%--            <td><c:out value="${employList.getPositionId()}"></c:out></td>--%>

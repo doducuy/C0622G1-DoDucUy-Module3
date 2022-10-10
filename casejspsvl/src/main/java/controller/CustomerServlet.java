@@ -26,8 +26,24 @@ public class CustomerServlet extends HttpServlet {
                 saveCustomer(request,response);
                 break;
             case "edit":
+                saveEditCustomer(request,response);
                 break;
         }
+    }
+
+    private void saveEditCustomer(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        int customerTypeId = Integer.parseInt(request.getParameter("customerTypeId"));
+        String name = request.getParameter("name");
+        String birthday = request.getParameter("birthday");
+        int gender = Integer.parseInt(request.getParameter("gender"));
+        String idCard = request.getParameter("idCard");
+        String phoneNumber = request.getParameter("phoneNumber");
+        String email = request.getParameter("email");
+        String address = request.getParameter("address");
+        Customer customer =new Customer(id,customerTypeId,name,birthday,gender,idCard,phoneNumber,email,address);
+        customerService.editCustomer(customer);
+        showCustomerList(request,response);
     }
 
     private void saveCustomer(HttpServletRequest request, HttpServletResponse response) {
@@ -66,11 +82,26 @@ public class CustomerServlet extends HttpServlet {
             case "delete":
                 deleteCustomer(request,response);
             case "edit":
+                showEditCustomerForm(request,response);
                 break;
             default:
                 showCustomerList(request,response);
         }
 
+    }
+
+    private void showEditCustomerForm(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        Customer customer = customerService.findById(id);
+        request.setAttribute("id",id);
+        request.setAttribute("customer",customer);
+        try {
+            request.getRequestDispatcher("/view/editCustomerForm.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void deleteCustomer(HttpServletRequest request, HttpServletResponse response) {
