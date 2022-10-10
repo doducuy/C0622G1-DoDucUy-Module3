@@ -14,6 +14,8 @@
 <head>
     <title>Employee List</title>
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../bootstrap520/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../datatables/css/dataTables.bootstrap5.min.css"/>
 </head>
 <body>
 <h3 style="color: #ffc107; text-align: center">EMPLOYEE LIST OF FURAMA RESORT</h3>
@@ -29,7 +31,8 @@
     </div>
 </form>
 
-<table class="table table-striped" border="1">
+<table class="table table-striped" border="1" id="tableStudent" class="table table-striped table-bordered" style="width:100%">
+    <thead>
     <tr>
         <th>ID</th>
         <th>Name</th>
@@ -40,13 +43,15 @@
         <th>Position</th>
         <th>Email</th>
         <th>Address</th>
-<%--        <th>Position Id</th>--%>
-<%--        <th>Education Degree Id</th>--%>
-<%--        <th>Division Id</th>--%>
+        <%--        <th>Position Id</th>--%>
+        <%--        <th>Education Degree Id</th>--%>
+        <%--        <th>Division Id</th>--%>
         <th>Username</th>
         <th>Delete</th>
         <th>Edit</th>
     </tr>
+    </thead>
+    <tbody>
     <c:forEach var="employList" items="${employeeList}">
         <tr>
             <td>${employList.getId()}</td>
@@ -62,11 +67,11 @@
             </c:forEach>
             <td>${employList.getEmail()}</td>
             <td>${employList.getAddress()}</td>
-<%--            <td><c:out value="${employList.getPositionId()}"></c:out></td>--%>
-<%--            <td><c:out value="${employList.getEducationDegreeId()}"></c:out></td>--%>
-<%--            <td><c:out value="${employList.getDivisionId()}"></c:out></td>--%>
+                <%--            <td><c:out value="${employList.getPositionId()}"></c:out></td>--%>
+                <%--            <td><c:out value="${employList.getEducationDegreeId()}"></c:out></td>--%>
+                <%--            <td><c:out value="${employList.getDivisionId()}"></c:out></td>--%>
             <td>${employList.getUsername()}</td>
-<%--            <td style="width: 10px"><a href="/employee?action=delete"><img src="../img/xoa.jpg" style="width: 50%"></a></td>--%>
+                <%--            <td style="width: 10px"><a href="/employee?action=delete"><img src="../img/xoa.jpg" style="width: 50%"></a></td>--%>
             <td style="width: 20px">
                 <!-- Button trigger modal -->
                 <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal${employList.getId()}">
@@ -95,11 +100,25 @@
         </tr>
 
     </c:forEach>
+    </tbody>
+
 
 </table>
 <div>
     <a href="/view/home.jsp">Back Home!!!</a>
 </div>
 <script src="../bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+<script src="../jquery/jquery-3.5.1.min.js"></script>
+<script src="../datatables/js/jquery.dataTables.min.js"></script>
+<script src="../datatables/js/dataTables.bootstrap5.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#tableStudent').dataTable({
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 5
+        });
+    });
+</script>
 </body>
 </html>
